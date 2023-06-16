@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'appIngles';
+  lectura: boolean = false;
+  textToTranslate: string[][] = []
+  translatedText: string[][] = []
+
+  onTranslateText(textToTranslate: string[][]) {
+    this.textToTranslate = textToTranslate;
+  }
+
+  onTranslatedText(translatedText: string[][]) {
+    this.translatedText = translatedText;
+    if (this.translatedText[0][0]) {
+      this.lectura = true;
+    }
+    
+  }
 }

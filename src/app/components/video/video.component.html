@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="fila1">
+        <video controls (timeupdate)="updateSubtitles($event)">
+            <source src="assets/Blank Space.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+        <div class="subtitulos">
+            <span class="palabra" *ngFor="let palabra of currentSubtitle.sub">
+                <span *ngIf="!palabra.hidden">{{ palabra.word }}&nbsp;</span>
+                <span *ngIf="palabra.hidden" class="hiddenWord">*****&nbsp;</span>
+            </span>
+        </div>
+        <div class="subtitulos">
+            <span class="palabra" *ngFor="let palabra of currentSubtitle2.sub">
+                <span *ngIf="!palabra.hidden">{{ palabra.word }}&nbsp;</span>
+                <span *ngIf="palabra.hidden" class="hiddenWord">*****&nbsp;</span>
+            </span>
+        </div>
+    </div>
+    <div class="fila2">
+        <div class="respuesta" *ngFor="let resp of respuestas; index as i" (click)="evaluarRespuesta(resp, i)">{{ resp.word.split(',')[0].toLowerCase() }}</div>
+    </div>
+</div>

@@ -1,0 +1,143 @@
+.todo {
+    display: flex;
+}
+
+/* Estilos para el contenedor de los párrafos */
+.parrafo {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    /* Un fondo blanco para los párrafos para hacerlos más destacados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Una pequeña sombra para dar profundidad */
+}
+
+/* Estilos para las frases dentro de los párrafos */
+.frases {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    padding: 10px;
+    border-radius: 8px;
+    /* Espacio entre frases */
+    background-color: #50a8e225;
+}
+
+/* Estilos para las frases cuando se quiere destacar algo importante (opcional) */
+.frases.highlight {
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* Estilos para las frases cuando se quiere mostrar un mensaje de error (opcional) */
+.frases.error {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.palabra {
+    position: relative;
+}
+
+.palabra:hover {
+    cursor: pointer;
+    background-color: #3498db5b;
+    border-radius: 5px;
+}
+
+.translation-tooltip {
+    position: absolute;
+    left: -30%;
+    top: -55px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    display: none;
+}
+
+.displayed {
+    display: block !important;
+}
+
+.guardar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.guardar i {
+    margin-left: 10px;
+}
+
+.guardar i:hover {
+    cursor: pointer;
+}
+
+.traducciones {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10%;
+}
+
+.toggle {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.toggle-switch {
+    display: inline-block;
+    background: #ccc;
+    border-radius: 16px;
+    width: 58px;
+    height: 32px;
+    position: relative;
+    vertical-align: middle;
+    transition: background 0.25s;
+}
+
+.toggle-switch:before,
+.toggle-switch:after {
+    content: "";
+}
+
+.toggle-switch:before {
+    display: block;
+    background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: left 0.25s;
+}
+
+.toggle:hover .toggle-switch:before {
+    background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.toggle-checkbox:checked+.toggle-switch {
+    background: #3498db;
+}
+
+.toggle-checkbox:checked+.toggle-switch:before {
+    left: 30px;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+.toggle-label {
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+}
